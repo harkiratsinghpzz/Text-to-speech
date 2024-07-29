@@ -6,7 +6,7 @@ let voiceSelect = document.querySelector("select"); //This line selects the <sel
 
 window.speechSynthesis.onvoiceschanged = () =>{   //is an event that fires when the list of available voices has been updated. The assigned arrow function is a callback that executes when this event occurs.
     voices = window.speechSynthesis.getVoices(); //This line retrieves the available voices using the getVoices() method and assigns them to the voices array.
-    speech.voice = voices[0];  //This sets the voice property of the SpeechSynthesisUtterance object (speech) to the first voice in the voices array
+    speech.voice = voices[0];  //This sets voice property of the SpeechSynthesisUtterance object (speech) to the first voice in the voices array
 
     voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i))); //This loop iterates over the voices array and populates the <select> element (voiceSelect) with options representing different voices. It creates a new Option object for each voice and assigns the voice's name as the option text and the index i as the option value.
 };
